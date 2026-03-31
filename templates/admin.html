@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+
+<h1>Admin Panel - Jagdish Traders</h1>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Brand Name">
+    <input type="text" name="image" placeholder="Image name (example: nestle.png)">
+    <button type="submit">Add Brand</button>
+</form>
+
+<h2>All Brands</h2>
+
+<ul>
+{% for brand in brands %}
+    <li>
+        {{ brand.name }} ({{ brand.image }})
+        <a href="/delete/{{ loop.index0 }}">Delete</a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>

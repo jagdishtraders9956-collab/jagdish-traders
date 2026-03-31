@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jagdish Traders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+    <h1>JAGDISH TRADERS</h1>
+</div>
+
+<div class="info">
+    <p><b>Owner:</b> Jagdish Kesharwani</p>
+    <p><b>Address:</b> Tilhapur Modh, Newada Road, Kaushambi</p>
+    <p><b>Landmark:</b> Chauraha</p>
+    <p><b>Phone:</b> 9956853286, 7905069895</p>
+    <p><b>Email:</b> jagdishtraders9956@gmail.com</p>
+</div>
+
+<div class="qr-section">
+    <h2>💳 Scan & Pay</h2>
+    <img src="{{ url_for('static', filename='payment_qr.png') }}">
+    <p>UPI / PhonePe / Google Pay</p>
+</div>
+
+<h2 class="title">Brands We Deal In</h2>
+
+<div class="container">
+{% for brand in brands %}
+    <div class="card">
+        <img src="{{ url_for('static', filename=brand.image) }}">
+        <h3>{{ brand.name }}</h3>
+    </div>
+{% endfor %}
+</div>
+
+</body>
+</html>
