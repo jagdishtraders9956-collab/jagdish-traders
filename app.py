@@ -1,16 +1,16 @@
 from flask import Flask, render_template, request, redirect, session
 import json
-from flask import send_from_directory
-
-@app.route('/google12345abcd.html')
-def google_verify():
-    return send_from_directory('static', 'google12345abcd.html')
 
 app = Flask(__name__)
 app.secret_key = "jagdish_secret_key"   # important for login
 
 USERNAME = "uttam"
 PASSWORD = "uttam7905"
+
+@app.route('/google12345abcd.html')
+def google_verify():
+    return send_from_directory('static', 'google12345abcd.html')
+
 
 def load_brands():
     with open("brands.json", "r") as f:
