@@ -9,7 +9,7 @@ PASSWORD = "uttam7905"
 
 @app.route('/google12345abcd.html')
 def google_verify():
-    return send_from_directory('static', 'google12345abcd.html')
+    return app. send_static_file('google12345abcd.html')
 
 
 def load_brands():
